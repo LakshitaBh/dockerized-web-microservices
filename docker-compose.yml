@@ -1,0 +1,18 @@
+version: '1'
+
+services:
+  frontend:
+    image: us-east1-docker.pkg.dev/active-sun-405516/test-client-server-repo/client-server-docker-frontend:1.0
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+    ports:
+      - "80:80"
+
+  backend:
+    image: us-east1-docker.pkg.dev/active-sun-405516/test-client-server-repo/client-server-docker-backend:1.0
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    ports:
+      - "5001:5001"
